@@ -36,7 +36,7 @@ if (countryName === null) {
   }
 }
 
-if (price >= 0) {
+if (price > 0) {
   // Write code on this line
   message = `Доставка в ${country} будет стоить ${price} кредитов`;
 }
