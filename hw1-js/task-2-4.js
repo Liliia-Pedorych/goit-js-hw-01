@@ -2,23 +2,18 @@ function formatString(string, maxLength = 40) {
   // Write code under this line
   const newString = string.slice(0, maxLength) + '...';
 
-  while (string.length > maxLength) {
+  // 1
+  // while (string.length > maxLength) {
+  //   return newString;
+  // }
+  // return string;
+
+  // 2
+  if (string.length > maxLength) {
     return newString;
+  } else {
+    return string;
   }
-  return string;
-
-  //   for (let i = 0; i < string.length; i += 1) {
-  //     // if (i <= maxLength) {
-  //     //   //   return string;
-  //     // }
-
-  //     if (i > maxLength) {
-  //       return newString;
-  //     }
-  //     // else {
-  //     //   return string;
-  //     // }
-  //   }
 }
 
 console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
