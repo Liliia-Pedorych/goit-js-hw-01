@@ -90,12 +90,22 @@ const users = [
 // const getSortedUniqueSkills = (array) => array.reduce((acc, { skills }) => acc.includes({ skills }) ? acc : acc + skills, [])
 
 
-//2
-const getSortedUniqueSkills = (array) => array;
+//2 правильно
+const getSortedUniqueSkills = (array) => array.reduce((acc, { skills }) => acc.concat(skills), []).filter((value, index, array) => array.indexOf(value) === index).sort();
+
+  //3
+  // const getSortedUniqueSkills = (array) => array.filter(({ skills }, index, array) => array.indexOf({ skills }) === index)
+  // .sort((a, b) => a - b);
+
+  //4
+    // const getSortedUniqueSkills = (array) => Array.from(new Set (array.skills))
+  // .sort((a, b) => a - b);
 
 
 
 console.log(getSortedUniqueSkills(users));
+
+
 /* [ 'adipisicing', 'amet',
  'anim', 'commodo',
  'culpa', 'elit',
